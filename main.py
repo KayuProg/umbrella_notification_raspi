@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+
 
 import socket
 import gc
@@ -21,7 +21,7 @@ import pygame.mixer#audio mixer
 flag=0
 def pico_connect():
     # HOST = '192.168.0.12'  # Raspberry PiのIPアドレス
-    PORT = 51128           # クライアントと同じポート番号
+    PORT = 51028           # クライアントと同じポート番号
     HOST = '0.0.0.0'
 
     # ソケットの設定
@@ -44,6 +44,8 @@ def pico_connect():
     print('Waiting for a pico w connection...')
     global flag
     if flag==0:
+        # from playsound3 import playsound        
+        # playsound(r"audio\notice.mp3")
         os.system("/usr/bin/mplayer -speed 1.1 -af scaletempo /home/kayu/Desktop/weather/audio/notice.mp3")
         flag=1
 
@@ -84,6 +86,8 @@ def pico_connect():
 ################# Japanese ###################
 def read_aloud():
     # logging.info("trying to read aloud")
+    # from playsound3 import playsound        
+    # playsound(r"audio/readaloud.mp3")
     os.system("/usr/bin/mplayer -speed 1.1 -af scaletempo /home/kayu/Desktop/weather/audio/readaloud.mp3")
 
 
