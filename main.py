@@ -6,7 +6,7 @@ import os
 import time
 import logging
 import pygame.mixer#audio mixer
-
+import pyvolume
 # ログ設定
 # logging.basicConfig(
 #     filename='/home/kayu/Desktop/weather/main.log',  # ログを記録するファイル名
@@ -46,6 +46,7 @@ def pico_connect():
     if flag==0:
         # from playsound3 import playsound        
         # playsound(r"audio\notice.mp3")
+        pyvolume.custom(percent=70)
         os.system("/usr/bin/mplayer -speed 1.1 -af scaletempo /home/kayu/Desktop/weather/audio/notice.mp3")
         flag=1
 
@@ -88,6 +89,7 @@ def read_aloud():
     # logging.info("trying to read aloud")
     # from playsound3 import playsound        
     # playsound(r"audio/readaloud.mp3")
+    pyvolume.custom(percent=100)
     os.system("/usr/bin/mplayer -speed 1.1 -af scaletempo /home/kayu/Desktop/weather/audio/readaloud.mp3")
 
 
