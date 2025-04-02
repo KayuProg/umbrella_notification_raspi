@@ -1,12 +1,14 @@
-
-
 import socket
 import gc
 import os
 import time
 import logging
-import pygame.mixer#audio mixer
-import pyvolume
+from playsound3 import playsound
+#import pygame.mixer#audio mixer
+#pygame.mixer.init()
+#pygame.mixer.music.set_volume(1)
+
+
 # ログ設定
 # logging.basicConfig(
 #     filename='/home/kayu/Desktop/weather/main.log',  # ログを記録するファイル名
@@ -45,9 +47,10 @@ def pico_connect():
     global flag
     if flag==0:
         # from playsound3 import playsound        
-        # playsound(r"audio\notice.mp3")
-        pyvolume.custom(percent=70)
-        os.system("/usr/bin/mplayer -speed 1.1 -af scaletempo /home/kayu/Desktop/weather/audio/notice.mp3")
+        #playsound("./audio/notice.mp3")
+        #pygame.mixer.music.set_volume(1)
+        os.system("/usr/bin/mplayer -speed 1.1 -volume 80 -af scaletempo /home/kayu/Desktop/umbrella_notification_raspi/audio/notice.mp3")
+    
         flag=1
 
     # 接続の確立
@@ -89,9 +92,9 @@ def read_aloud():
     # logging.info("trying to read aloud")
     # from playsound3 import playsound        
     # playsound(r"audio/readaloud.mp3")
-    pyvolume.custom(percent=100)
-    os.system("/usr/bin/mplayer -speed 1.1 -af scaletempo /home/kayu/Desktop/weather/audio/readaloud.mp3")
-
+    #pygame.mixer.music.set_volume(0.1)
+    os.system("/usr/bin/mplayer -speed 1.1 -volume 90 -af scaletempo /home/kayu/Desktop/umbrella_notification_raspi/audio/readaloud.mp3")
+  
 
     # # mixerモジュールの初期化
     # pygame.mixer.init()
