@@ -9,7 +9,7 @@ from gtts import gTTS
 def make_audio(text):
     japanese=text
     tts = gTTS(japanese, lang='ja')
-    tts.save("/home/kayu/Desktop/weather/audio/readaloud.mp3")
+    tts.save("/home/kayu/Desktop/umbrella_notification_raspi/audio/readaloud.mp3")
     print("making audio finish")
 
 #########################################################
