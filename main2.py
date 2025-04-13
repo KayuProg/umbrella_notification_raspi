@@ -61,6 +61,7 @@ def make_text():
     else:
         text_full=text_umb+''.join(text_time)+"です．"
     print("text making finish")
+    print("text is ",text_full)
     return text_full
 
 
@@ -68,3 +69,7 @@ def task1():#audioの作成まで行う．
      text_full=make_text()
      make_audio(text_full)
      gc.collect()#ガベージコレクションの強制実行
+
+
+if __name__=="__main__":
+    task1()

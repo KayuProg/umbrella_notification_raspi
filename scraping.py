@@ -24,7 +24,7 @@ def scrape():
         weather=today_table.find('tr',class_='weather')
 
         data=weather.find_all('p')#dataに今日のデータ格納
-
+        # print(data[0])
         # forecasts={"ko":None,"yowa":None,"ame":None,"tuyo":None,"gou":None}
         forecasts={}
         check=[0,0,0,0,0]
@@ -61,6 +61,7 @@ def scrape():
         if check[4]==0:
                 forecasts["gou"]=None
                 check[4]=1
+        # print(forecasts)
 
         return forecasts
 
@@ -72,3 +73,5 @@ def scrape():
 
 
 
+if __name__=="__main__":
+        scrape()
