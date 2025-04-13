@@ -34,6 +34,7 @@ def make_text():
     keys=list(result.keys())
 
     now_hour=int(datetime.now().hour)
+    time=""
     for key in keys:
         if result[key]!=None:
             #現在以降の天気を反映させる
@@ -52,7 +53,7 @@ def make_text():
             elif key=='gou':
                 if  result['gou']>=now_hour:
                     time=str(result['gou'])+"時から豪雨．"
-
+        
             text_time.append(time)
     
     if text_umb==None:
