@@ -50,7 +50,7 @@ def pico_connect():
         #playsound("./audio/notice.mp3")
         #pygame.mixer.music.set_volume(1)
         #os.system("amixer sset Master 100%+")
-        os.system("/usr/bin/mplayer -speed 1.1 -volume 90 -af scaletempo /home/kayu/Desktop/umbrella_notification_raspi/audio/notice.mp3")
+        os.system("/usr/bin/mplayer -speed 1.1 -volume 80 -af scaletempo /home/kayu/Desktop/umbrella_notification_raspi/audio/notice.mp3")
     
         flag=1
 
@@ -94,7 +94,7 @@ def read_aloud():
     # from playsound3 import playsound        
     # playsound(r"audio/readaloud.mp3")
     #pygame.mixer.music.set_volume(0.1)
-    os.system("/usr/bin/mplayer -speed 1.1 -volume 95 -af scaletempo /home/kayu/Desktop/umbrella_notification_raspi/audio/readaloud.mp3")
+    os.system("/usr/bin/mplayer -speed 1.1 -volume 80 -af scaletempo /home/kayu/Desktop/umbrella_notification_raspi/audio/readaloud.mp3")
   
 
     # # mixerモジュールの初期化
