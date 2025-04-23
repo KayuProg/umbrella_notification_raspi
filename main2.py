@@ -16,6 +16,7 @@ def make_audio(text):
 # Scraping cython使ってますがあまり早くなってません．
 #########################################################
 import scraping 
+import pytz
 
 def make_text():
     result=scraping.scrape()
@@ -30,12 +31,16 @@ def make_text():
         text_umb="今日は折り畳み傘を持っていきましょう．"
     elif not any(result):
         text_umb="今日は傘を持って行かなくて大丈夫です．"
-
+    print(result)
     keys=list(result.keys())
+    
+    jst = pytz.timezone('Asia/Tokyo')
+    now_hour = int(datetime.now(jst).hour)
+    #now_hour=int(datetime.now().hour)
+    print(now_hour)
 
-    now_hour=int(datetime.now().hour)
-    time=None
     for key in keys:
+        time=None
         if result[key]!=None:
             #現在以降の天気を反映させる
             #っていうのを辞めた．
@@ -56,9 +61,13 @@ def make_text():
                 time=str(result["gou"])+"時から豪雨．"
             if time != None:
                 text_time.append(time)
+                
+    print(text_time)
     
     if text_umb==None:
         text_full=("今日は傘を持っていく必要はありません．")
+    elif text_umb != None and text_time==[]:
+        text_full=text_umb
     else:
         text_full=text_umb+''.join(text_time)+"です．"
     print("text making finish")
