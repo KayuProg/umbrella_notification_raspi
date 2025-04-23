@@ -61,7 +61,7 @@ def scrape():
         if check[4]==0:
                 forecasts["gou"]=None
                 check[4]=1
-        # print(forecasts)
+        print(forecasts)
 
         return forecasts
 
