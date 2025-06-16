@@ -26,11 +26,11 @@ def make_text():
     text_umb=None
 
     if (result['yowa']!=None or result['ame']!=None or result['tuyo']!=None or result['gou']!=None):
-        text_umb="今日は傘を持っていきましょう．"
+        text_umb="傘を持っていきましょう．"
     elif result['ko']!=None and (result['yowa']==None and result['ame']==None and result['tuyo']==None and result['gou']==None):
-        text_umb="今日は折り畳み傘を持っていきましょう．"
+        text_umb="折り畳み傘を持っていきましょう．"
     elif not any(result):
-        text_umb="今日は傘を持って行かなくて大丈夫です．"
+        text_umb="傘を持つ必要はありません．"
     print(result)
     keys=list(result.keys())
     
@@ -65,7 +65,7 @@ def make_text():
     print(text_time)
     
     if text_umb==None:
-        text_full=("今日は傘を持っていく必要はありません．")
+        text_full=("傘を持つ必要はありません")
     elif text_umb != None and text_time==[]:
         text_full=text_umb
     else:
