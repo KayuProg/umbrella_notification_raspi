@@ -9,7 +9,7 @@ import os
 
 def scrape():
 
-        url='https://tenki.jp/forecast/3/16/4410/13204/1hour.html#forecast-point-1h-today'#tenki.jp
+        url='https://tenki.jp/forecast/3/16/4410/13210/1hour.html'#tenki.jp
 
         page=requests.get(url)
 
